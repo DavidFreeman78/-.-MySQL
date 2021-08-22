@@ -32,11 +32,11 @@ mysql sample < example.sql
 (по желанию) Ознакомьтесь более подробно с документацией утилиты mysqldump. Создайте дамп единственной таблицы help_keyword базы данных mysql. Причем добейтесь того, чтобы дамп содержал только первые 100 строк таблицы.
 */
 
-/*Не смог понять правильно ли сделал задачу, так как дамп не копировался ни в одну БД в mysql, выдавая ошибку: ERROR 3723 (HY000) at line 25: The table 'help_keyword' may not be created in the reserved tablespace 'mysql'.*/
+/* Не смог понять правильно ли сделал задачу, так как дамп не копировался ни в одну БД в mysql, выдавая ошибку: ERROR 3723 (HY000) at line 25: The table 'help_keyword' may not be created in the reserved tablespace 'mysql'. */
 
 mysqldump mysql help_keyword --where="help_keyword_id<=100" > additional_task.sql
 
-/*При открытии файла с помощью WorckBench:
+/*При открытии скрипта с помощью WorckBench, вроде бы все корректно - 100 строк:
 
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
